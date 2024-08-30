@@ -1,16 +1,11 @@
-import mongodb from 'mongodb'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+dotenv.config()
 
-//connection url
-const url = 'mongodb+srv://swornimamishra:Admin123@cluster0.6jjqgem.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const url = `${process.env.DB_URL}`
 
-//Creating client
-const client = new mongodb.MongoClient(url)
+// console.log(url)
 
-//Database name
+mongoose.connect(url)
 
-const dbName = 'B52WEE'
-
-export default{
-    client,
-    dbName
-}
+export default mongoose
