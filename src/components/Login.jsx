@@ -24,7 +24,6 @@ const handleLogin = async(e)=>{
             sessionStorage.setItem('token',res.data.token),
             sessionStorage.setItem('name',res.data.name),
             sessionStorage.setItem('role',res.data.role)
-            console.log(res.data)
             toast.success(res.data.message)
             navigate('/dashboard')
            }
