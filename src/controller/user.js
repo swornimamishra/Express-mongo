@@ -5,7 +5,7 @@ const getAll = async (req, res) => {
     try {
         // console.log(req.headers.authorization.split(" ")[1])
         
-        let users = await UserModel.find();
+        let users = await UserModel.find({},{password:0});
         res.status(200).send({
             message: "Data Fetch Successful",
             users

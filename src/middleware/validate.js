@@ -1,7 +1,7 @@
 import Auth from "../common/Auth.js";
 const validate = async(req,res,next)=>{
     try{
-        let token = req.headers.authorization.split(" ")[1]
+        let token = req?.headers?.authorization?.split(" ")[1]  //? is conditional way of fetching the data
         if(token){
             let data = await Auth.decodeToken(token)
             if(Math.floor(+new Date()/1000)<data.exp)
